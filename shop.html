@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shop - Reality Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+      color: #1a1a1a;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background-color: #0066cc;
+      color: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    .logo { font-size: 1.6em; font-weight: bold; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      background-color: #005bb5;
+      padding: 5px 10px;
+      font-size: 0.85em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    nav ul li a:hover {
+      background-color: #004a94;
+      transform: translateY(-1px);
+    }
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .product:hover { transform: translateY(-3px); }
+    .product img {
+      width: 100%;
+      height: auto;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+    .product h3 { font-size: 1em; margin: 10px 0; }
+    .product p { color: #0066cc; font-weight: bold; }
+    .product button {
+      margin-top: 8px;
+      padding: 6px 12px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .product button:hover { background-color: #004a94; }
+    footer {
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      background-color: #e9f2fb;
+      border-top: 1px solid #ccc;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="logo">Reality Shop</div>
+  <nav>
+    <ul>
+      <li><a href="r.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="content.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Account</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="grid">
+  <div class="product" data-id="1" data-name="Single Royal Chair" data-price="950" data-type="furniture">
+    <img src="imgs/ed.jpg" alt="Single Royal Chair">
+    <h3>Single Royal Chair</h3>
+    <p>₹950.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="2" data-name="Single Cot" data-price="999" data-type="furniture">
+    <img src="imgs/fef.jpg" alt="Single Cot">
+    <h3>Single Cot</h3>
+    <p>₹999.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="3" data-name="Blue T-shirt" data-price="499" data-type="clothing">
+    <img src="imgs/Ts.jpg" alt="Blue T-shirt">
+    <h3>Blue T-shirt</h3>
+    <p>₹499.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="4" data-name="Plain Shirt" data-price="450" data-type="clothing">
+    <img src="imgs/short.jpg" alt="Plain Shirt">
+    <h3>Plain Shirt</h3>
+    <p>₹450.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="5" data-name="Table" data-price="850" data-type="furniture">
+    <img src="imgs/table.jpg" alt="Table">
+    <h3>Table</h3>
+    <p>₹850.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="6" data-name="Sun Glass" data-price="299" data-type="accessory">
+
+<!-- Use it like any other HTML element -->
+<model-viewer alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum" src="shared-assets/models/NeilArmstrong.glb" ar environment-image="shared-assets/environments/moon_1k.hdr" poster="shared-assets/models/NeilArmstrong.webp" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+
+
+    <h3>Sun Glass</h3>
+    <p>₹299.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+  </div>
+  <div class="product" data-id="7" data-name="Three Seat Sofa" data-price="999" data-type="furniture">
+    <img src="imgs/sofa1.jpg" alt="Three Seat Sofa">
+    <h3>Three Seat Sofa</h3>
+    <p>₹999.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="8" data-name="Wooden Table" data-price="750" data-type="furniture">
+    <img src="imgs/table.jpg" alt="Wooden Table">
+    <h3>Wooden Table</h3>
+    <p>₹750.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="9" data-name="Sweat Shirt" data-price="550" data-type="clothing">
+    <img src="imgs/Tshort.jpg" alt="Sweat Shirt">
+    <h3>Sweat Shirt</h3>
+    <p>₹550.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+  <div class="product" data-id="10" data-name="Head Phones" data-price="899" data-type="electronics">
+    <img src="imgs/mp.jpg" alt="Head Phones">
+    <h3>Head Phones</h3>
+    <p>₹899.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+  </div>
+  <div class="product" data-id="11" data-name="Single Sofa" data-price="980" data-type="furniture">
+    <img src="imgs/sofa.jpg" alt="Single Sofa">
+    <h3>Single Sofa</h3>
+    <p>₹980.00</p>
+    <button class="btn-cart">Add to Cart</button>
+    <button class="btn-360">360° Spin</button>
+    <button class="btn-ar">AR View</button>
+  </div>
+</div>
+<footer>
+  <p>© 2025 Reality Shop. All rights reserved.</p>
+</footer>
+<script>
+  // Add to Cart (as before)
+  const cartButtons = document.querySelectorAll(".btn-cart");
+  cartButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const product = btn.parentElement;
+      const name = product.getAttribute("data-name");
+      const price = parseInt(product.getAttribute("data-price"));
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      const existing = cart.find(item => item.name === name);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(name + " added to cart!");
+    });
+  });
+
+  // 360° Spin links every product
+  const spinButtons = document.querySelectorAll(".btn-360");
+  spinButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const product = btn.parentElement;
+      const id = product.getAttribute("data-id");
+      window.location.href = "360degree.html?id=" + id;
+    });
+  });
+
+  // AR View for clothing & furniture only
+  const allArButtons = document.querySelectorAll(".btn-ar");
+  allArButtons.forEach(btn => {
+    const product = btn.parentElement;
+    const type = product.getAttribute("data-type");
+    if (type !== "furniture" && type !== "clothing") {
+      btn.style.display = "none";
+    } else {
+      btn.addEventListener("click", () => {
+        const id = product.getAttribute("data-id");
+        window.location.href = "ar-view.html?id=" + id;
+      });
+    }
+  });
+</script>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Reality Shop</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+      color: #1a1a1a;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background-color: #0066cc;
+      color: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+    .logo {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      background-color: #005bb5;
+      padding: 6px 12px;
+      font-size: 0.9em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover {
+      background-color: #004a94;
+    }
+    .container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #004080;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #003366;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 10px;
+      border: 1px solid #004080;
+      border-radius: 5px;
+      font-size: 1em;
+      outline-color: #004080;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    input:focus {
+      border-color: #003366;
+    }
+    button[type="submit"] {
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 1.1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+      font-weight: 600;
+    }
+    button[type="submit"]:hover {
+      background-color: #004a94;
+    }
+    .login-container {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 0.95em;
+    }
+    .login-container a {
+      background-color: #0073e6;
+      color: white;
+      padding: 8px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+    .login-container a:hover {
+      background-color: #005bb5;
+    }
+    footer {
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      background-color: #e9f2fb;
+      border-top: 1px solid #ccc;
+      font-size: 0.85em;
+    }
+    @media(max-width: 480px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Reality Shop</div>
+  <nav>
+    <ul>
+      <li><a href="r.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="content.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Account</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Create an Account</h2>
+  <form>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="Enter password" required>
+
+    <label for="confirm-password">Confirm Password</label>
+    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div class="login-container">
+    <p>Already have an account?</p>
+    <a href="login.html">Login</a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Reality Shop. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

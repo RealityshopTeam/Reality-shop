@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact - Reality Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f8fc;
+      color: #1a1a1a;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background-color: #0066cc;
+      color: white;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    }
+
+    .logo { font-size: 1.6em; font-weight: bold; }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      background-color: #005bb5;
+      padding: 5px 10px;
+      font-size: 0.85em;
+      border-radius: 5px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #004a94;
+      transform: translateY(-1px);
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin: 8px 0 4px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 0.95em;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      margin-top: 12px;
+      padding: 8px 16px;
+      background-color: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95em;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #004a94;
+    }
+
+    .contact-info {
+      margin-top: 25px;
+      padding: 12px;
+      background: #e9f2fb;
+      border-radius: 6px;
+      font-size: 0.9em;
+    }
+
+    footer {
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+      background-color: #e9f2fb;
+      border-top: 1px solid #ccc;
+      font-size: 0.85em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Reality Shop</div>
+  <nav>
+    <ul>
+<li><a href="r.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="cart.html">Cart</a></li>
+      <li><a href="content.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.html">Account</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="container">
+  <h1>Contact Us</h1>
+  <form>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="subject">Subject</label>
+    <input type="text" id="subject" name="subject" placeholder="Enter subject" required>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <h3>Our Contact Details</h3>
+    <p>Email: penkejayesh@gmail.com</p>
+    <p>Phone: +91 6309680277</p>
+    <p>Address: Reality Shop HQ, kkd, India</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Reality Shop. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>360° Product Viewer | Reality Shop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      background: #232a34;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Open Sans', Arial, sans-serif;
+      color: white;
+      padding: 0 15px;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    model-viewer {
+      width: 320px;
+      height: 320px;
+      border-radius: 12px;
+      background: #eef3fb;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.25);
+    }
+    button {
+      margin-top: 25px;
+      background: #ff8000;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+    }
+    button:hover {
+      background: #e07300;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="productTitle">Loading Product...</h1>
+  <model-viewer id="productModel" alt="3D product" camera-controls auto-rotate ar ar-modes="webxr scene-viewer quick-look">
+  </model-viewer>
+  <button onclick="goBack()">Back to Products</button>
+
+  <script>
+    // Maps your product IDs to sample 3D model URLs and names (replace URLs with your own models)
+    const productMap = {
+      1: { name: "Single Royal Chair", model: "https://modelviewer.dev/shared-assets/models/Chair.glb" },
+      2: { name: "Single Cot", model: "https://modelviewer.dev/shared-assets/models/Sofa.glb" },
+      3: { name: "Blue T-shirt", model: "https://modelviewer.dev/shared-assets/models/ShopperBag.glb" },
+      4: { name: "Plain Shirt", model: "https://modelviewer.dev/shared-assets/models/ShopperBag.glb" },
+      5: { name: "Table", model: "https://modelviewer.dev/shared-assets/models/Table.glb" },
+      6: { name: "Sun Glass", model: "C:\Users\harik\OneDrive\Desktop\mylab\car.glb" },
+      7: { name: "Three Seat Sofa", model: "https://modelviewer.dev/shared-assets/models/Sofa.glb" },
+      8: { name: "Wooden Table", model: "https://modelviewer.dev/shared-assets/models/Table.glb" },
+      9: { name: "Sweat Shirt", model: "https://modelviewer.dev/shared-assets/models/ShopperBag.glb" },
+      10: { name: "Head Phones", model: "https://modelviewer.dev/shared-assets/models/Astronaut.glb" },
+      11: { name: "Single Sofa", model: "https://modelviewer.dev/shared-assets/models/Sofa.glb" }
+    };
+
+    // Get ID from URL ?id=...
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id');
+
+    const product = productMap[productId] || { name: "Default Product", model: "https://modelviewer.dev/shared-assets/models/Astronaut.glb" };
+
+    document.getElementById('productTitle').textContent = product.name;
+    const modelViewer = document.getElementById('productModel');
+    modelViewer.src = product.model;
+    modelViewer.alt = product.name;
+
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</body>
+</html>
